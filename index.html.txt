@@ -1,0 +1,173 @@
+// =====================================
+// TALVIA ENTERPRISES - FINAL PROFESSIONAL WEBSITE
+// READY TO DEPLOY (STATIC - FAST + MOBILE FRIENDLY)
+// =====================================
+
+// 👉 Create file: index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talvia - Sehat Ka Khazana</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<img src="logo.png" class="logo">
+<h1>TALVIA</h1>
+<p>Sehat Ka Khazana</p>
+</header>
+
+<section class="hero">
+<h2>Healthy & Natural Food Products</h2>
+<a href="https://wa.me/919270209524" class="btn">Order on WhatsApp</a>
+</section>
+
+<section class="products">
+
+<div class="card">
+<img src="talbina.jpg">
+<h3>Talbina</h3>
+<p>Barley, khajoor aur dry fruits se bana paushtik aahar.</p>
+<a href="https://wa.me/919270209524" class="btn">Order</a>
+</div>
+
+<div class="card">
+<img src="lassi1.jpg">
+<h3>Rose Lassi</h3>
+<p>Gulab ki khushboo ke saath refreshing drink.</p>
+</div>
+
+<div class="card">
+<img src="lassi2.jpg">
+<h3>Jeera Lassi</h3>
+<p>Bhune jeera se digestion friendly lassi.</p>
+</div>
+
+<div class="card">
+<img src="lassi3.jpg">
+<h3>Mango Lassi</h3>
+<p>Fresh aam pulp aur doodh ka perfect mix.</p>
+</div>
+
+<div class="card">
+<img src="lassi4.jpg">
+<h3>Classic Lassi</h3>
+<p>Shuddh doodh se bani traditional meethi lassi.</p>
+</div>
+
+<div class="card">
+<img src="chaach.jpg">
+<h3>Masala Chaach</h3>
+<p>Pudina, mirch aur masalon ke saath chatpata drink.</p>
+</div>
+
+</section>
+
+<section class="about">
+<h2>About Talvia Enterprises</h2>
+<p>Welcome to Talvia Enterprises jaha hum shuddhata aur swasthya ko ek naye roop mein pesh karte hain. Hamara brand Talvia sirf ek naam nahi balki ek vaada hai behtareen quality aur asli swaad ka.</p>
+</section>
+
+<section class="contact">
+<h2>Contact Us</h2>
+<p>📞 +91 9270209524 / +91 9270309524</p>
+<p>📍 H.No. 519, Gali No. 10, Sr No. 166, Raunakabaad, Malegaon, Nashik, Maharashtra - 423203</p>
+<a href="https://wa.me/919270209524" class="btn">Chat on WhatsApp</a>
+</section>
+
+<footer>
+<p>© 2026 Talvia Enterprises</p>
+</footer>
+
+</body>
+</html>
+
+// =====================================
+// 👉 Create file: style.css
+// =====================================
+
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+header {
+  background: #0a5c2f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 120px;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px;
+}
+
+.btn {
+  background: green;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+}
+
+.about, .contact {
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+// =====================================
+// 🚀 FINAL STEP (IMPORTANT)
+// =====================================
+
+// 1. Rename your images:
+// talbina.jpg
+// lassi1.jpg (rose)
+// lassi2.jpg (jeera)
+// lassi3.jpg (mango)
+// lassi4.jpg (classic)
+// chaach.jpg
+// logo.png
+
+// 2. Upload on Vercel:
+// https://vercel.com
+
+// 3. Connect domain Talvia.in
+
+// DONE ✅ Your website is LIVE
