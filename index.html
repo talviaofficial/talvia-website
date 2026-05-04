@@ -1,84 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Talvia - Sehat Ka Khazana</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;color:#1f2937;background:#fff;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
 
+    .container{width:min(1180px,92%);margin:auto}
+
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #eee}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
+    .logo img{height:58px;width:auto}
+    .menu{display:flex;gap:24px;font-weight:500;align-items:center}
+    .menu a:hover{color:#0f766e}
+    .cta-btn{background:#0f766e;color:#fff;padding:12px 18px;border-radius:999px;font-weight:600}
+
+    .hero{padding:48px 0 36px;background:linear-gradient(135deg,#f0fdfa,#ffffff 55%,#ecfeff)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:42px}
+    .badge{display:inline-block;background:#ccfbf1;color:#115e59;padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;margin-bottom:16px}
+    h1{font-size:clamp(34px,5vw,64px);line-height:1.05;color:#111827;margin-bottom:16px}
+    .hero p{font-size:18px;line-height:1.7;color:#4b5563;margin-bottom:26px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+    .btn-primary,.btn-secondary{padding:14px 22px;border-radius:999px;font-weight:600;display:inline-flex;align-items:center;gap:10px}
+    .btn-primary{background:#0f766e;color:#fff}
+    .btn-secondary{border:1px solid #d1d5db}
+
+    .slider-card{background:#fff;padding:14px;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+    .slider-wrap{overflow:hidden;border-radius:22px}
+    .slides{display:flex;transition:transform .9s ease-in-out}
+    .slides img{width:100%;height:460px;object-fit:cover;flex-shrink:0}
+
+    section{padding:70px 0}
+    .section-title{text-align:center;margin-bottom:42px}
+    .section-title h2{font-size:clamp(28px,4vw,42px);margin-bottom:10px}
+    .section-title p{color:#6b7280;max-width:650px;margin:auto;line-height:1.7}
+
+    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .product-card{background:#fff;border:1px solid #eef2f7;border-radius:24px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.04);transition:.25s}
+    .product-card:hover{transform:translateY(-6px)}
+    .product-card img{height:250px;width:100%;object-fit:cover}
+    .product-card .content{padding:20px}
+    .product-card h3{margin-bottom:8px;font-size:22px}
+    .product-card p{color:#6b7280;line-height:1.7}
+
+    .about{background:#f8fafc}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+    .about-box{background:#fff;padding:28px;border-radius:24px;box-shadow:0 12px 28px rgba(0,0,0,.04)}
+    .about-box p{line-height:1.9;color:#4b5563}
+
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .contact-card{background:#fff;border:1px solid #eef2f7;padding:26px;border-radius:24px}
+    .contact-card h3{margin-bottom:12px}
+    .contact-card p{line-height:1.8;color:#4b5563}
+
+    footer{background:#0f172a;color:#e5e7eb;padding:34px 0}
+    .footer-wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .socials{display:flex;gap:12px;flex-wrap:wrap}
+    .socials a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08)}
+
+    @media (max-width: 980px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .products-grid{grid-template-columns:repeat(2,1fr)}
+      .menu{display:none}
+      .slides img{height:380px}
+    }
+
+    @media (max-width: 640px){
+      .hero{padding-top:28px}
+      .products-grid{grid-template-columns:1fr}
+      .logo img{height:48px}
+      .slides img{height:280px}
+      .hero p{font-size:16px}
+      .btn-primary,.btn-secondary,.cta-btn{width:100%;justify-content:center}
+      .hero-actions{flex-direction:column}
+    }
+  </style>
+</head>
 <body>
 
-<!-- 🔥 HERO -->
+<header>
+  <div class="container nav">
+    <a href="#" class="logo"><img src="logo.png" alt="Talvia Logo"></a>
+    <nav class="menu">
+      <a href="#products">Products</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="https://wa.me/919270209524" class="cta-btn">Order Now</a>
+  </div>
+</header>
+
 <section class="hero">
-  <div class="overlay">
-    <img src="logo.png" class="logo-img">
-    <h1>TALVIA</h1>
-    <p>Sehat Ka Khazana</p>
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">Talvia • Sehat Ka Khazana</span>
+      <h1>Healthy Food Products With Premium Taste</h1>
+      <p>Talvia brings you nutritious Talbina, refreshing Lassi & Chaach, beverages, and healthy food products made for everyday wellness.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://wa.me/919270209524"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+        <a class="btn-secondary" href="#products">Explore Products</a>
+      </div>
+    </div>
 
-    <h2>Pure • Healthy • Delicious</h2>
-    <p>Traditional Taste with Modern Health</p>
-
-    <a href="https://wa.me/919270209524" class="btn">Order on WhatsApp</a>
+    <div class="slider-card">
+      <div class="slider-wrap">
+        <div class="slides" id="slides">
+          <img src="lassi1.png" alt="Lassi">
+          <img src="lassi2.png" alt="Lassi">
+          <img src="lassi3.png" alt="Lassi">
+          <img src="lassi4.png" alt="Lassi">
+          <img src="chaach.png" alt="Chaach">
+          <img src="talbina.jpg" alt="Talbina">
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- 🔥 SLIDER -->
-<section class="slider">
-  <div class="slides">
-    <img src="lassi1.png">
-    <img src="lassi2.png">
-    <img src="lassi3.png">
-    <img src="lassi4.png">
-    <img src="chaach.png">
-    <img src="talbina.jpg">
+<section id="products">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Premium Products</h2>
+      <p>Natural ingredients, traditional goodness, and modern quality standards.</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card"><img src="talbina.jpg" alt="Talbina"><div class="content"><h3>Talbina</h3><p>Nutritious traditional superfood for daily wellness.</p></div></div>
+      <div class="product-card"><img src="lassi1.png" alt="Lassi"><div class="content"><h3>Lassi</h3><p>Rich, creamy and refreshing drink for every season.</p></div></div>
+      <div class="product-card"><img src="chaach.png" alt="Chaach"><div class="content"><h3>Chaach</h3><p>Light, digestive and naturally refreshing traditional drink.</p></div></div>
+    </div>
   </div>
 </section>
 
-<!-- 🔥 ABOUT -->
-<section class="about">
-  <h2>About Us</h2>
-  <p>Talvia Enterprises brings purity and health together with traditional recipes and modern taste.</p>
-</section>
-
-<!-- 🔥 PREMIUM -->
-<section class="premium">
-  <div class="card">
-    <h3>🌿 100% Natural</h3>
-    <p>No chemicals, only pure ingredients</p>
-  </div>
-
-  <div class="card">
-    <h3>💪 Healthy</h3>
-    <p>Boost immunity with traditional recipes</p>
-  </div>
-
-  <div class="card">
-    <h3>🚚 Fast Delivery</h3>
-    <p>Quick delivery at your doorstep</p>
+<section id="categories" class="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>Product Categories</h2>
+      <p>Talbina, Lassi, Chaach, Beverages, Healthy Foods and more.</p>
+    </div>
   </div>
 </section>
 
-<!-- 🔥 FOOTER -->
+<section id="about" class="about">
+  <div class="container about-grid">
+    <div class="about-box">
+      <h2>About Talvia</h2>
+      <p>Talvia is focused on delivering healthy and traditional food products with premium quality. Our mission is to combine nutrition, taste, and trust so families can enjoy better food every day.</p>
+    </div>
+    <div class="about-box">
+      <h2>Why Choose Us</h2>
+      <p>Premium quality ingredients, traditional recipes, modern hygiene standards, and a growing range of health-focused food products crafted for everyday life.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contact & Orders</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Order on WhatsApp</h3>
+        <p>+91 9270209524<br>+91 9270309524</p>
+      </div>
+      <div class="contact-card">
+        <h3>Address</h3>
+        <p>House No. 519, Gali No. 10, Sr No. 166, Raunakabaad, Malegaon, District Nashik, Maharashtra - 423203</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>© 2026 Talvia Enterprises</p>
+  <div class="container footer-wrap">
+    <div>
+      <strong>Talvia</strong><br>
+      Follow us @Talviaofficial
+    </div>
+
+    <div class="socials">
+      <a href="https://facebook.com/Talviaofficial" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://instagram.com/Talviaofficial" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://youtube.com/@Talviaofficial" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://x.com/Talviaofficial" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
 </footer>
+
+<script>
+  const slides = document.getElementById('slides');
+  const total = slides.children.length;
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % total;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }, 5000);
+</script>
 
 </body>
 </html>
-<script>
-let index = 0;
-const slides = document.querySelector(".slides");
-const totalSlides = document.querySelectorAll(".slides img").length;
-
-setInterval(() => {
-  index++;
-
-  if (index >= totalSlides) {
-    index = 0;
-  }
-
-  slides.style.transform = `translateX(-${index * 100}%)`;
-  slides.style.transition = "transform 1s ease-in-out";
-
-}, 5000); // 👉 5000ms = 5 seconds
-</script>
