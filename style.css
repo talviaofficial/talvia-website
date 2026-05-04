@@ -39,7 +39,7 @@ footer{background:#000;color:#fff;text-align:center;padding:10px}
 .slides {
   display: flex;
   width: 600%;
-  animation: slide 30s infinite ease-in-out;
+  
 }
 
 .slides img {
@@ -57,7 +57,23 @@ footer{background:#000;color:#fff;text-align:center;padding:10px}
 
   45% { transform: translateX(-200%); }
   60% { transform: translateX(-200%); }
+/* SLIDER FIX */
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
 
+.slides {
+  display: flex;
+  width: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.slides img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
   65% { transform: translateX(-300%); }
   80% { transform: translateX(-300%); }
 
