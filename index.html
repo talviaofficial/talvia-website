@@ -212,3 +212,13 @@
 
 </body>
 </html>
+<script>
+let i=0;
+let slides=document.getElementById('slides');
+let total=slides.children.length;
+
+setInterval(()=>{
+ i=(i+1)%total;
+ slides.style.transform=`translateX(-${i*100}%)`;
+},5000);
+</script>
